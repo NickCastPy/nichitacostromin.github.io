@@ -340,6 +340,16 @@ nav{
     border-radius: 83px;
     font-size:3vw;
 }
+.plus__btn{
+    text-decoration:none;
+    color:black;
+}
+.plus__btn:hover::before{
+    display:none;
+}
+.plus__btn:hover{
+    transform: scale(1);
+}
 
 .proj__btn:hover{
     border: 2px solid white;
