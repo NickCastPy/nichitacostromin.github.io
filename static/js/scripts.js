@@ -84,21 +84,21 @@ for(let x = 0; x < item__link.length; x++){
 
 // Hover animation
 
-proj__prev = document.querySelectorAll('.proj__prev')
-circle__cursor = document.querySelector('.circle__cursor')
+// proj__prev = document.querySelectorAll('.proj__prev')
+// circle__cursor = document.querySelector('.circle__cursor')
 
-for(let o = 0; o < proj__prev.length; o++){
-  proj__prev[o].addEventListener('mousemove', (e)=>{
-    circle__cursor.style.opacity = 100
-    let x = e.clientX
-    let y = e.clientY
-    circle__cursor.style.left = x + 'px'
-    circle__cursor.style.top = y + 'px'
-  })
-  proj__prev[o].addEventListener('mouseout', (e)=>{
-    circle__cursor.style.opacity = 0
-  })
-}
+// for(let o = 0; o < proj__prev.length; o++){
+//   proj__prev[o].addEventListener('mousemove', (e)=>{
+//     circle__cursor.style.opacity = 100
+//     let x = e.clientX
+//     let y = e.clientY
+//     circle__cursor.style.left = x + 'px'
+//     circle__cursor.style.top = y + 'px'
+//   })
+//   proj__prev[o].addEventListener('mouseout', (e)=>{
+//     circle__cursor.style.opacity = 0
+//   })
+// }
 
 // Spotlight
 
@@ -125,17 +125,7 @@ const copy = () =>{
   navigator.clipboard.writeText(footer__title.innerHTML);
 }
 
-const email__cursor = document.querySelector('.email__cursor')
-footer__title.addEventListener('mousemove', (e)=>{
-  email__cursor.style.opacity = 100
-  let x = e.clientX
-  let y = e.clientY
-  email__cursor.style.left = x + 'px'
-  email__cursor.style.top = y + 'px'
-})
-footer__title.addEventListener('mouseout', (e)=>{
-  email__cursor.style.opacity = 0
-})
+
 
 // Loading Animation
 const head__txt = document.querySelector('.head__txt')
@@ -143,3 +133,37 @@ const load__txt = () => {
   head__txt.style.transform = 'translateX(0px)'
 }
 
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+  // true for mobile device
+
+}else{
+  // false for not mobile device
+  proj__prev = document.querySelectorAll('.proj__prev')
+  circle__cursor = document.querySelector('.circle__cursor')
+  
+  for(let o = 0; o < proj__prev.length; o++){
+    proj__prev[o].addEventListener('mousemove', (e)=>{
+      circle__cursor.style.opacity = 100
+      let x = e.clientX
+      let y = e.clientY
+      circle__cursor.style.left = x + 'px'
+      circle__cursor.style.top = y + 'px'
+    })
+    proj__prev[o].addEventListener('mouseout', (e)=>{
+      circle__cursor.style.opacity = 0
+    })
+  }
+  
+  const email__cursor = document.querySelector('.email__cursor')
+  footer__title.addEventListener('mousemove', (e)=>{
+  email__cursor.style.opacity = 100
+  let x = e.clientX
+  let y = e.clientY
+  email__cursor.style.left = x + 'px'
+  email__cursor.style.top = y + 'px'
+  })
+  footer__title.addEventListener('mouseout', (e)=>{
+    email__cursor.style.opacity = 0
+  })
+  
+}
